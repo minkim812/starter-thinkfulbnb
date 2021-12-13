@@ -14,13 +14,11 @@ h2 {
 h3 {
   font-size: 18px;
   font-weight: 500;
-  text-align: left;
 }
 
 p {
   line-height: 1.5em;
   margin: 0;
- font-size: 22px;
 }
 
 section {
@@ -33,93 +31,56 @@ section.alternate-background {
 }
 
 main img {
-  width: 100px;
+  width: 100%;
 }
 
-.group img {
-  width: 100%;
-  height: auto;
-  padding: 10px;
-}
-
-.group img {
-  width: 100%;
-  height: auto;
-  padding: 10px;
-}
 /* ---  Groups & Items --- */
+
 .group {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-}
-
-.group-two {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: flex-start;
 }
 
 .item {
   flex: 1;
-  margin: 10px;
+  margin:10px;
 }
 
 .item-double {
   flex: 2;
-  margin: 10px;
-}
-
-.listContain {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-content: center;
-  align-items: center;
-  flex: 0 1 auto;
 }
 
 /* -------  Navigation ------- */
 
 header {
   background-color: #ff385c;
-  padding: 20px 20px 0 20px;
+  padding: 20px 20px 20px 20px;
   text-align: center;
-}
-
-header nav {
-  display: flex;
-  flex-direction: row;
-  justify-content:flex-end;
-  margin: 0px auto;
-}
-
-header nav ul {
-  display: flex;
-  flex-direction: row;
 }
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 50px;
   color: #fff;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: center;
 }
 
 header nav ul li {
   list-style-type: none;
-  display: flex;
-  justify-content: center;
 }
 
 header nav ul li a {
   color: #fff;
   text-decoration: none;
-  margin: 0 20px 0 0;
+  padding: 0 20px 0 0;
+}
+
+header nav ul li:last-child a {
+  margin-right: 20px;
 }
 
 header nav ul li a:hover {
@@ -127,27 +88,11 @@ header nav ul li a:hover {
   text-decoration: none;
 }
 
-.nav-box {
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-content: center;
-}
-
-.form-item {
-  flex-direction: row;
-  height: auto;
-  align-self: auto;
-  margin-bottom: 5%;
-}
 /* -------  Search Form ------- */
 form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   border: 2px solid #ff385c;
   padding: 10px;
 }
@@ -159,7 +104,8 @@ form label {
 form select,
 form input {
   margin-bottom: 20px;
-  width: 180px;
+  width: 65%;
+  float: right;
 }
 
 form button {
@@ -172,6 +118,7 @@ form button {
 }
 
 /* -------  Footer ------- */
+
 footer {
   background-color: #ff385c;
 }
@@ -183,114 +130,55 @@ footer p {
 }
 
 /* -------  Media Query ------- */
-@media all and (min-width: 800px) {
+
+@media all and (min-width: 600px) {
   header {
+    background-color: #ff385c;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 
-  header h1 {
-    margin: 12px 0;
-    padding-top: 4px;
-    font-size: 25px;
-  }
-
-  header nac {
-    margin-top: 10px;
-  }
-
-  header nav ul li a:hover {
-    color: #bdbdbd
-  }
-
-  .section {
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-  }
-
-  p {
-    font-size: 12px;
-    width: 50%;
-    height: 150px;
-  }
-
-  p-about {
-    font-size: 12px;
-    width: 100%;
-    height: 10px;
+  header nav {
     padding: 10px;
+  }
+
+  form {
+    flex-direction: row;
   }
 
   .group {
-    display: grid;
-    grid-template-columns: 30% 30% 40%;
-    grid-gap: 10px;
-  }
-
-  .group-two {
-    display: grid;
-    width: 100%;
-    grid-template-columns: 50% 50%;
-    grid-gap: 10px;
-  }
-
-  .group-two img {
-    width: 100%;
-  }
-
-  .form-item {
-    display: flex;
-    padding: 10px;
-  }
-
-  .container {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-content: center;
+    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: center;
   }
 
-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 50px;
-}
+  .vacation-form .item {
+    display: flex block;
+    flex: 1 1 auto;
+    flex-direction: column;
+  }
 
-form div {
-  display: flex;
-  flex-direction: column;
-}
-form button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 50px;
-}
+  .item label
+  , .item input 
+  , .item select 
+  , .item button{
+    display: flex;
+    width: 100%
+  }
 
-form select,
-form input {
-  margin-bottom: 0px;
-  width: 150px;
-}
+  .grid-column {
+    display: flex;
+    flex: 1;
+    flex-direction: column; 
+    margin: 10px;
+  }
 
-.group {
-  flex-direction: row;
-}
-
-#ideas .group {
-  min-height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-#ideas div {
-  display: flex;
-  flex-basis: calc(50%-40px);
-  justify-content: center;
-  flex-direction: column;
-}
+  .grid-row {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+  }
 }
